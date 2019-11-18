@@ -2,8 +2,8 @@ $(document).ready(function() {
 
 	/* open wallet code */
 
-	var explorer_tx = "https://coinb.in/tx/"
-	var explorer_addr = "https://coinb.in/addr/"
+	var explorer_tx = "https://explorer.cpuchain.org/tx/"
+	var explorer_addr = "https://explorer.cpuchain.org/address/"
 	var explorer_block = "https://coinb.in/block/"
 
 	var wallet_timer = false;
@@ -938,7 +938,7 @@ $(document).ready(function() {
 		} else if(host=='cpuchain'){
 			listUnspentCPUchain(redeem);
 		} else {
-			listUnspentDefault(redeem);
+			listUnspentCPUchain(redeem);
 		}
 
 		if($("#redeemFromStatus").hasClass("hidden")) {
@@ -1305,7 +1305,7 @@ $(document).ready(function() {
 	/* broadcast a transaction */
 
 	$("#rawSubmitBtn").click(function(){
-		rawSubmitDefault(this);
+		rawSubmitCPUchain(this);
 	});
 
 	// broadcast transaction via coinbin (default)
@@ -2033,7 +2033,7 @@ $(document).ready(function() {
 			});
 		} else {
 			$("#rawSubmitBtn").click(function(){
-				rawSubmitDefault(this); // revert to default
+				rawSubmitCPUchain(this); // revert to default
 			});
 		}
 	}
